@@ -1,0 +1,19 @@
+{
+    "name": "rabpack/routing",
+    "description": "Routing",
+    "type": "package",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "meysam nosrati",
+            "email": "m.nosrati2019@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rabpack\\Routing\\": "src"
+        }
+    },
+    "require": {}
+}
