@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Rabpack\Routing\src\Web\Traits;
+namespace Rabpack\Routing\Web\Traits;
 
 
 

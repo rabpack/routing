@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Rabpack\Routing\src\src;
+namespace Rabpack\Routing;
 
 
 use Exception;

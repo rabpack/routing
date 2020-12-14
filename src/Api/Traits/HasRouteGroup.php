@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Rabpack\Routing\src\Api\Traits;
+namespace Rabpack\Routing\Api\Traits;
 
 
 trait HasRouteGroup

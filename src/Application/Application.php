@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Rabpack\Routing\src\Application;
+namespace Rabpack\Routing\Application;
 
 
-use Rabpack\Routing\src\src\Router;
+use Rabpack\Routing\Router;
 
 class Application
 {

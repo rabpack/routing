@@ -6,14 +6,13 @@
 |for creation routing use of singleton design pattern
 |___________________________________________________
  * */
-namespace Rabpack\Routing\src\Web;
+namespace Rabpack\Routing\Web;
 
 
-
-use Rabpack\Routing\src\Web\Traits\HasBuildMethod;
-use Rabpack\Routing\src\Web\Traits\HasMethodCaller;
-use Rabpack\Routing\src\Web\Traits\HasRouteGroup;
-use Rabpack\Routing\src\Web\Traits\HasRouteMethod;
+use Rabpack\Routing\Web\Traits\HasBuildMethod;
+use Rabpack\Routing\Web\Traits\HasMethodCaller;
+use Rabpack\Routing\Web\Traits\HasRouteGroup;
+use Rabpack\Routing\Web\Traits\HasRouteMethod;
 
 class Route
 {
