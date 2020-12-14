@@ -35,12 +35,14 @@ class Router
            $this->notFound();
 
        $controllerName = str_replace('\\',RABCO_PACKAGE_DS,$match['controller']);
-       $controllerPath = trim(RABCO_PACKAGE_CONTROLLER_DIR,'/ ').RABCO_PACKAGE_DS.$controllerName.'.php';
+       $controllerPath = RABCO_PACKAGE_CONTROLLER_DIR.RABCO_PACKAGE_DS.$controllerName.'.php';
 
        if (!file_exists($controllerPath))
            throw new Exception("Controller (\"$controllerName\") Not Found");
-       $controllerNameSpace = str_replace('/','\\',trim(RABCO_PACKAGE_CONTROLLER_DIR,'/ '));
+
+       $controllerNameSpace = RABCO_PACKAGE_CONTROLLER_NAME_SPACE;
        $controller = $controllerNameSpace.'\\'.$match['controller'];
+
        $obj = new $controller();
        if (!class_exists($controller))
            throw new Exception("Class (\"$controller\") Not Found");

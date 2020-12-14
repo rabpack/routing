@@ -9,28 +9,25 @@ use Rabpack\Routing\Router;
 class Application
 {
     /**
-     * Application constructor.
      * @param string $baseDir
      * @param string $controllerDir
+     * @param string $controllerNamespace
      * @throws \Exception
      */
-    public function __construct(string $baseDir,string $controllerDir)
-    {
-        $this->loadConfig($baseDir,$controllerDir);
-    }
-
-    /**
-     * @param string $baseDir
-     * @param string $controllerDir
-     * @throws \Exception
-     */
-    private function loadConfig(string $baseDir,string $controllerDir)
+    public function loadConfig(string $baseDir, string $controllerDir, string $controllerNamespace)
     {
         $temporary = explode('?',trim($_SERVER['REQUEST_URI'],'/'));
         define('RABCO_PACKAGE_CURRENT_ROUTE',$temporary[0]);
         define('RABCO_PACKAGE_BASE_DIR',$baseDir);
         define('RABCO_PACKAGE_CONTROLLER_DIR',$controllerDir);
-        define('RABCO_PACKAGE_DS',dirname(DIRECTORY_SEPARATOR));
+        define('RABCO_PACKAGE_DS',DIRECTORY_SEPARATOR);
+        define('RABCO_PACKAGE_CONTROLLER_NAME_SPACE',$controllerNamespace);
+        $router = new Router();
+        $router->run();
+    }
+
+    public function globalRoutes()
+    {
         global $routes;
         $routes = [
             "get"=>[],
@@ -40,7 +37,5 @@ class Application
             "delete"=>[],
             "any"=>[]
         ];
-        $router = new Router();
-        $router->run();
     }
 }
