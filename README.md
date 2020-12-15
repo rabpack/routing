@@ -1,38 +1,45 @@
 # routing
-For Run Routing in index.php file new object of Application Class:
 
-$app = new Application();
+Install Package : <br>
+"composer require rabpack/routing"<br>
 
-then for use of this class should create a one file in project. 
+For Run Routing in index.php file new object of Application Class:<br>
+
+$app = new Application();<br>
+
+then for use of this class should create a one file in project. <br>
 For example, create a file named Web in your project:<br>
-Web.php Contents : 
---------------------------------------------
-use Rabpack\Routing\Web\Route;
 
-Route::get('/','HomeController@index');<br>
-Route::get('/posts','HomeController@post');<br>
----------------------------------------------
-This file is used to define the route.
+Web.php Contents :
+------------------------------------------------------------------------
+    use Rabpack\Routing\Web\Route;
+
+    Route::get('/','HomeController@index');
+    Route::get('/posts','HomeController@post');
+------------------------------------------------------------------------
+
+This file is used to define the route.<br>
 then should this file add to index.php :<br> 
 
 index.php : 
 -----------------------------------------------------------------------------
-  require autoload.php : <br>
-  require_once dirname(__DIR__)."/vendor/autoload.php"; <br>
+    require autoload.php : 
+    require_once dirname(__DIR__)."/vendor/autoload.php"; 
   
-   create new object Application class : <br> 
-  $app = new Rabpack\Routing\Application\Application();<br>
+    create new object Application class : 
+    $app = new Rabpack\Routing\Application\Application();
   
-  call method globalRoutes for create HttpVerbs : <br>
-  $app->globalRoutes();<br>
+    call method globalRoutes for create HttpVerbs : 
+    $app->globalRoutes();
   
-  require routes file : <br>  
-  require_once dirname(__DIR__)."/routes/web.php";<br>
-  require_once dirname(__DIR__)."/routes/api.php";<br>
+    require routes file : <br>  
+    require_once dirname(__DIR__)."/routes/web.php";
+    require_once dirname(__DIR__)."/routes/api.php";
   
-  call method loadConfig : <br>
-  $app->loadConfig("root path","controllers dir path","Controllers Namespace");<br>
+    call method loadConfig : 
+    $app->loadConfig("root path","controllers dir path","Controllers Namespace");
 -----------------------------------------------------------------------------
+  
   Example Create Routes : <br>
 -----------------------------------------------------------------------------
      use Rabpack\Routing\Web\Route;
