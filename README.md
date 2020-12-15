@@ -35,24 +35,24 @@ index.php :
 -----------------------------------------------------------------------------
   Example Create Routes : <br>
 -----------------------------------------------------------------------------
-     use Rabpack\Routing\Web\Route;<br> 
+     use Rabpack\Routing\Web\Route;
   
-    Route::get('/','HomeController@index'); // route : http://example.com => controller : HomeController => method : index <br>
+    Route::get('/','HomeController@index'); // route : http://example.com => controller : HomeController => method : index 
   
-     Route::get('/posts','PostController@index'); // route : http://example.com/posts => controller : PostController => method : index <br>
+     Route::get('/posts','PostController@index'); // route : http://example.com/posts => controller : PostController => method : index 
   
-     Route::namespace('Admin')->prefix('admin')->group(function () {<br> 
+     Route::namespace('Admin')->prefix('admin')->group(function () { 
   
-      Route::get('/','DashboardController@index');  // route : http://example.com/admin/ => controller : Admin\DashboardController => method : index <br>
+      Route::get('/','DashboardController@index');  // route : http://example.com/admin/ => controller : Admin\DashboardController => method : index 
       
       Route::prefix('post')->group(function () {
       
-         Route::get('/','PostController@index'); // route : http://example.com/admin/post/ => controller : Admin\PostController => method : index <br>
+         Route::get('/','PostController@index'); // route : http://example.com/admin/post/ => controller : Admin\PostController => method : index 
          
-         Route::get('/show','PosrController@show'); // route : http://example.com/admin/post/show => controller : Admin\PostController => method : show <br>
+         Route::get('/show','PosrController@show'); // route : http://example.com/admin/post/show => controller : Admin\PostController => method : show
          
-         Route::put('/edit/{id}','PostController@edit'); // route : http://example.com/admin/post/edit/115 => controller : Admin\PostController => method : edit <br>
+         Route::put('/edit/{id}','PostController@edit'); // route : http://example.com/admin/post/edit/115 => controller : Admin\PostController => method : edit
          
       });
-  });
+     });
   -----------------------------------------------------------------------------
